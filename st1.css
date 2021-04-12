@@ -1,0 +1,66 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo Da 2", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: #6699ff;
+  /* vh will automatically adjust the height according to browser */
+  /* align items center the items in the middle of the screen verticalyy(from the top) */
+  /* justify content center will  center the content in the middle of viewport. */
+  /* The overflow property specifies what should happen if content overflows an element's box. */
+}
+.container {
+  display: flex;
+  /* height: 80vh; */
+  width: 90vw;
+}
+.panel {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  border-radius: 50px;
+  color: pink;
+  cursor: pointer;
+  margin: 10px;
+  flex: 0.5;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  /* The background-size property specifies the size of the background images */
+}
+
+.panel h3 {
+  font-size: 80px;
+  position: absolute;
+  bottom: 20px;
+  left: 8px;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
